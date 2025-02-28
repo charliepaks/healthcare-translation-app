@@ -17,7 +17,9 @@ api_key = os.getenv("OPENAI_API_KEY")
 if api_key:
     openai.api_key = api_key
 else:
-    st.error("OpenAI API key not found. Please add it to your .env file as OPENAI_API_KEY=your_key_here")
+    # Only show error in local environment, not on Heroku
+    if os.getenv("DYNO") is None:  # "DYNO" is set in Heroku
+        st.error("OpenAI API key not found. Please add it to your .env file or set it as an environment variable in Heroku.")
 
 # Set page configuration
 st.set_page_config(
