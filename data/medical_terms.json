@@ -1,0 +1,65 @@
+{
+    "general": {
+        "heart attack": "myocardial infarction",
+        "stroke": "cerebrovascular accident",
+        "high blood pressure": "hypertension",
+        "water pill": "diuretic",
+        "blood thinner": "anticoagulant",
+        "stomach flu": "gastroenteritis",
+        "kidney stones": "nephrolithiasis",
+        "pink eye": "conjunctivitis",
+        "heartburn": "gastroesophageal reflux disease",
+        "sugar": "glucose"
+    },
+    "cardiology": {
+        "heart attack": "myocardial infarction",
+        "chest pain": "angina pectoris",
+        "irregular heartbeat": "arrhythmia",
+        "heart failure": "congestive heart failure",
+        "heart murmur": "cardiac murmur",
+        "high blood pressure": "hypertension",
+        "leaky valve": "valvular regurgitation",
+        "narrowed arteries": "atherosclerosis",
+        "fluid around heart": "pericardial effusion"
+    },
+    "neurology": {
+        "stroke": "cerebrovascular accident",
+        "seizure": "epileptic seizure",
+        "migraine": "migraine headache",
+        "pinched nerve": "nerve compression",
+        "concussion": "mild traumatic brain injury",
+        "memory loss": "amnesia",
+        "dizziness": "vertigo",
+        "tingling": "paresthesia",
+        "tremors": "tremor disorder"
+    },
+    "orthopedics": {
+        "broken bone": "fracture",
+        "slipped disc": "herniated disc",
+        "joint pain": "arthralgia",
+        "bone loss": "osteoporosis",
+        "joint inflammation": "arthritis",
+        "knee cap": "patella",
+        "shoulder blade": "scapula",
+        "hip socket": "acetabulum"
+    },
+    "pediatrics": {
+        "chicken pox": "varicella",
+        "ear infection": "otitis media",
+        "pink eye": "conjunctivitis",
+        "strep throat": "streptococcal pharyngitis",
+        "hand, foot and mouth": "hand-foot-and-mouth disease",
+        "diaper rash": "diaper dermatitis",
+        "growth chart": "growth curve"
+    },
+    "oncology": {
+        "cancer spread": "metastasis",
+        "cancer cells": "malignant cells",
+        "cancer doctor": "oncologist",
+        "scan": "imaging study",
+        "tumor removal": "tumor resection",
+        "chemo": "chemotherapy",
+        "radiation": "radiation therapy",
+        "targeted therapy": "precision medicine"
+    }
+}
