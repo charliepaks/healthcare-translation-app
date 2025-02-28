@@ -1,35 +1,23 @@
 #!/bin/bash
-# Setup script for Healthcare Translation App
 
-# Create and activate virtual environment
-echo "Creating virtual environment..."
-python -m venv venv
+# Update package lists
+sudo apt-get update -y
 
-# Activate virtual environment based on OS
-if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" ]]; then
-    source venv/Scripts/activate
-else
-    source venv/bin/activate
-fi
+# Install system dependencies (if required)
+sudo apt-get install -y ffmpeg portaudio19-dev python3.11 python3.11-venv python3.11-dev
 
-# Install system dependencies for PyAudio if on Linux
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    echo "Installing system dependencies for PyAudio..."
-    sudo apt-get update
-    sudo apt-get install -y portaudio19-dev python3-pyaudio
-fi
+# Create and activate a virtual environment (optional but recommended)
+python3.11 -m venv venv
+source venv/bin/activate
 
-# Install Python dependencies
-echo "Installing Python dependencies..."
+# Upgrade pip
 pip install --upgrade pip
+
+# Install required Python packages
 pip install -r requirements.txt
 
-# Create data directory
-echo "Creating data directory..."
-mkdir -p data
+# Ensure permissions for audio recording (if needed)
+sudo chmod a+rw /dev/snd
 
-# Initialize medical terms database
-echo "Initializing medical terms database..."
-python -c "from medical_terms import initialize_medical_terms; initialize_medical_terms()"
-
-echo "Setup complete! Run the app with: streamlit run app.py"
+# Exit script successfully
+exit 0
