@@ -32,11 +32,4 @@ mkdir -p data
 echo "Initializing medical terms database..."
 python -c "from medical_terms import initialize_medical_terms; initialize_medical_terms()"
 
-# Create .env file if it doesn't exist
-if [ ! -f .env ]; then
-    echo "Creating .env file..."
-    echo "OPENAI_API_KEY=your_openai_api_key_here" > .env
-    echo "Please edit the .env file to add your OpenAI API key"
-fi
-
 echo "Setup complete! Run the app with: streamlit run app.py"
