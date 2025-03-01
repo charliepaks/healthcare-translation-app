@@ -126,7 +126,7 @@ export default function RecordButton({ sourceLang, targetLang, onResult }) {
   const [loading, setLoading] = useState(false);
   const mediaRecorderRef = useRef(null);
   const audioChunksRef = useRef([]);
-  const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://healthcareappbackend.xyz";
+  const API_URL = "https://healthcareappbackend.xyz";
 
   const startRecording = async () => {
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
@@ -199,6 +199,57 @@ export default function RecordButton({ sourceLang, targetLang, onResult }) {
     }
     recorder.stop();
   };
+
+  // const stopRecording = () => {
+  //   const recorder = mediaRecorderRef.current;
+  //   if (!recorder || recorder.state !== "recording") {
+  //     return;
+  //   }
+  
+  //   // Collect audio chunks and process when stopped
+  //   const audioChunks = [];
+    
+  //   // Clear existing data handlers to prevent duplicates
+  //   recorder.ondataavailable = null;
+  //   recorder.onstop = null;
+  
+  //   // Handle audio data collection
+  //   recorder.ondataavailable = (e) => {
+  //     audioChunks.push(e.data);
+  //   };
+  
+  //   recorder.onstop = async () => {
+  //     try {
+  //       // Create audio blob from collected chunks
+  //       const audioBlob = new Blob(audioChunks, { type: "audio/wav" });
+        
+  //       // Example: Send to backend
+  //       const formData = new FormData();
+  //       formData.append("audio", audioBlob, "recording.wav");
+  
+  //       const response = await fetch("/api/upload-audio", {
+  //         method: "POST",
+  //         body: formData,
+  //         // Add headers if needed (e.g., authorization)
+  //       });
+  
+  //       if (!response.ok) {
+  //         throw new Error(`HTTP error! status: ${response.status}`);
+  //       }
+  
+  //       // Process successful response
+  //       const result = await response.json();
+  //       console.log("Upload success:", result);
+        
+  //     } catch (error) {
+  //       console.error("Audio processing failed:", error);
+  //       // Add error handling (e.g., show user notification)
+  //     }
+  //   };
+  
+  //   // Stop recording last to capture all chunks
+  //   recorder.stop();
+  // };
 
   return (
     <div className="flex flex-col items-center space-y-3">
