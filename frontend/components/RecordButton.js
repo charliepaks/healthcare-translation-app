@@ -126,7 +126,7 @@ export default function RecordButton({ sourceLang, targetLang, onResult }) {
   const [loading, setLoading] = useState(false);
   const mediaRecorderRef = useRef(null);
   const audioChunksRef = useRef([]);
-  const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://healthcareappbackend.xyz/";
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://healthcareappbackend.xyz";
 
   const startRecording = async () => {
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
