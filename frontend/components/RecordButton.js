@@ -149,7 +149,7 @@ export default function RecordButton({ sourceLang, targetLang, onResult }) {
       
       try {
         // 1) Transcription
-        const speechRes = await fetch(`${API_URL}/api/speech/transcribe?lang=${sourceLang}`, {
+        const speechRes = await fetch(`https://healthcareappbackend.xyz/api/speech/transcribe?lang=${sourceLang}`, {
           method: "POST",
           body: formData,
         });
@@ -162,7 +162,7 @@ export default function RecordButton({ sourceLang, targetLang, onResult }) {
         const originalText = speechData.transcript;
 
         // 2) Translation
-        const translateRes = await fetch(`${API_URL}/api/translate`, {
+        const translateRes = await fetch(`https://healthcareappbackend.xyz/api/translate`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ text: originalText, source_lang: sourceLang, target_lang: targetLang }),
@@ -171,7 +171,7 @@ export default function RecordButton({ sourceLang, targetLang, onResult }) {
         const translatedText = translateData.translated_text;
 
         // 3) TTS
-        const ttsRes = await fetch(`${API_URL}/api/tts`, {
+        const ttsRes = await fetch(`https://healthcareappbackend.xyz/api/tts`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ text: translatedText, lang: targetLang }),
