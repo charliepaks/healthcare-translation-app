@@ -8,10 +8,7 @@ from .routes import speech, translation, tts
 app = FastAPI(title="Healthcare Translation API")
 
 # Allow CORS from frontend domain (update to your real domain or localhost)
-origins = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-]
+origins = [ "*"]
 
 app.add_middleware(
     CORSMiddleware,
